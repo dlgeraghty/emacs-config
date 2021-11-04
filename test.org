@@ -1,0 +1,65 @@
+#+title: The glories of org
+#+author: A. Org Writer
+* Welcome to Org-mode
+** Sub-heading
+Each extra * increases the depth by one level.
+
+* TODO Promulgate Org to the world
+** TODO Create a quickstart guide
+
+* Lists:
+  To buy
+  1. Milk
+  2. Eggs
+     - Organic
+  3. Cheese
+     + Parmesan
+     + Mozzarella 
+
+* Checkboxes:
+  - [ ] not started
+  - [-] in progress
+  - [X] complete
+
+
+* Links:
+  [[https://orgmode.org][a nice website]]
+
+* Images:
+  [[https://upload.wikimedia.org/wikipedia/commons/5/5d/Konigsberg_bridges.png]]
+  This will be rendered during export
+
+* Blocks
+  simple block:
+  #+begin_example
+  monospace
+  #+end_example
+
+  source block: (provide syntax highlighting, code execution, literate programming...)
+  #+begin_src emacs-lisp
+  (message "Hello world")
+  #+end_src
+
+  this block can be evaluated using some shortcuts: C-c C-c or C-c C-v e
+  #+RESULTS:
+  : Hello world
+
+* Tables:
+  
+  pressing tab will correctly align the tables
+  | I    | am  | a    | table |
+  | with | two | rows |       |
+
+* Comments:
+  # A line comment
+  example of an @@comment:inline@@ comment
+  #+begin_comment
+  this is a block comment
+  it can span multiple lines
+  and other markup:
+  #+begin_src emacs_lisp
+  (+ 1 2)
+  #+end_src
+  #+end_comment
+  
+    
