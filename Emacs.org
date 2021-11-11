@@ -174,7 +174,8 @@
   (variable-pitch-mode 1)
   (auto-fill-mode 0)
   (visual-line-mode 1)
-  (setq evil-auto-indent nil))
+  (setq evil-auto-indent nil)
+  (setq org-startup-indented t))
 (defun efs/org-font-setup ()
   ;; Replace list hyphen with dot
   (font-lock-add-keywords 'org-mode
@@ -209,13 +210,10 @@
 	org-hide-emphasis-markers t)
   (efs/org-font-setup))
 
-
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
-
-
 
 (defun efs/org-mode-visual-fill()
   (setq visual-fill-column-width 100
@@ -231,6 +229,8 @@
 (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("ht" . "src html"))
+(add-to-list 'org-structure-template-alist '("vh" . "src vhdl"))
 
 ;; snippet to add python to the org-block executables:
 (org-babel-do-load-languages
