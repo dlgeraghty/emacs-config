@@ -267,3 +267,8 @@
 
 
 #+end_src
+
+* Swap CapsLock for Ctrl
+#+begin_src shell
+xmodmap ./xmodmap
+#+end_src
