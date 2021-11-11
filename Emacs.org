@@ -41,8 +41,11 @@
 #+end_src
 
 ** Fonts:
+#+begin_src shell
+sudo pacman -S ttf-inconsolata ttf-roboto
+#+end_src
 #+begin_src emacs-lisp
-;;;set fonts: be sure to have these fonts installed on your system!
+
 (set-face-attribute 'default nil :font "Inconsolata" :height 120)
 (set-face-attribute 'fixed-pitch nil :font "Inconsolata" :height 150)
 (set-face-attribute 'variable-pitch nil :font "Roboto" :height 175 :weight 'regular)
