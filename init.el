@@ -28,7 +28,7 @@
 ; set visible bell
 (setq visible-bell t)
 
-;;;set fonts: be sure to have these fonts installed on your system!
+(set-face-attribute 'default nil :height 100)
 (set-face-attribute 'default nil :font "Inconsolata" :height 120)
 (set-face-attribute 'fixed-pitch nil :font "Inconsolata" :height 150)
 (set-face-attribute 'variable-pitch nil :font "Roboto" :height 175 :weight 'regular)
@@ -186,12 +186,14 @@
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 (add-to-list 'org-structure-template-alist '("ht" . "src html"))
 (add-to-list 'org-structure-template-alist '("vh" . "src vhdl"))
+(add-to-list 'org-structure-template-alist '("ch" . "src c++"))
 
 ;; snippet to add python to the org-block executables:
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
    (python . t)
+   (C . t)
    (shell . t)))
 
 ;;caution!! this snippet will stop asking for confirmation when running a block of code in org mode!
@@ -207,7 +209,7 @@
 ;; Automatically tangle our Emacs.org config file when we save it
 (defun efs/org-babel-tangle-config ()
   (when (string-equal (buffer-file-name)
-                      (expand-file-name "/home/david/.emacs.d/Emacs.org"))
+                      (expand-file-name "~/Documents/emacs-config/Emacs.org"))
     ;; Dynamic scoping to the rescue
     (let ((org-confirm-babel-evaluate nil))
       (org-babel-tangle))))
